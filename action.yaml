@@ -25,4 +25,4 @@ runs:
   image: 'Dockerfile'
 branding:
   icon: 'git-branch'
-  color: 'blue'
+  color: 'orange'

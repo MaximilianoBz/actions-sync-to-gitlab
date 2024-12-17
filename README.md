@@ -2,18 +2,19 @@
 
 This GitHub Action synchronizes specific branches and tags to a target Git repository, supporting both public and self-hosted GitLab.
 
-## Inputs
+## **Environment Variables**
 
-| Input Name   | Description                                     | Required | Type | Example                                    |
-| ------------ | ----------------------------------------------- | -------- | -------- | ------------------------------------------ |
-| `username`   | Username for Git authentication                 | Yes      | Variable | `your_username`                            |
-| `token`      | Token for Git authentication                    | Yes      | Secret | `your_personal_token`                      |
-| `target-url` | Base URL of the target repository               | Yes      | Variable | `https://gitlab.com` or `https://gitlab.mycompany.com` |
-| `group`      | Group or organization name in the repository    | Yes      | Variable | `my-group`                                 |
-| `repo-name`  | Repository name                                 | Yes      | Variable | `my-repo`                                  |
-| `branches`   | Comma-separated list of branches to synchronize | Yes      | Variable | `develop,homologacion,main`                |
+| Variable Name        | Description                                                    | Type    | Required | Type | Example                          |
+|-----------------------|----------------------------------------------------------------|---------|----------|--------|-------------------------------|
+| `TARGET_USERNAME`     | Username for Git authentication.                               | string  | Yes      | Variable | `your_username` |
+| `TARGET_TOKEN`        | Token or password for Git authentication.                     | string  | Yes      | Secret | `your_personal_token`          |
+| `TARGET_URL`          | Base URL of the target Git repository (e.g., GitLab instance). | string  | Yes      | Variable | `https://gitlab.com`        |
+| `TARGET_GROUP`        | Group or organization name in the target repository.           | string  | Yes      | Variable | `my-group`                  |
+| `TARGET_REPO`         | Name of the repository in the target Git server.               | string  | Yes      | Variable | `my-repo`                   |
+| `TARGET_BRANCHES`     | Comma-separated list of branches to synchronize.               | string  | Yes      | Variable | `develop,homologacion,main` |
 
-## Example Workflow
+
+## Usage
 
 ```yaml
 name: GitLab Sync
