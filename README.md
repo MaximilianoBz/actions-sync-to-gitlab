@@ -2,17 +2,33 @@
 
 This GitHub Action synchronizes specific branches and tags to a target Git repository, supporting both public and self-hosted GitLab.
 
-## **Environment Variables**
+Environment Variables
+	•	TARGET_USERNAME - [Required]. Username for Git authentication.
+	•	Type: string
+	•	Example: your_username
+	•	TARGET_TOKEN - [Required]. Token or password for Git authentication.
+	•	Type: string
+	•	Example: your_personal_token
+	•	TARGET_URL - [Required]. Base URL of the target Git repository (e.g., GitLab instance).
+	•	Type: string
+	•	Example: https://gitlab.com
+	•	TARGET_GROUP - [Required]. Group or organization name in the target repository.
+	•	Type: string
+	•	Example: my-group
+	•	TARGET_REPO - [Required]. Name of the repository in the target Git server.
+	•	Type: string
+	•	Example: my-repo
+	•	TARGET_BRANCHES - [Required]. Comma-separated list of branches to synchronize.
+	•	Type: string
+	•	Example: develop,homologacion,main
 
-| Variable Name        | Description                                                    | Type    | Required | Type | Example                          |
-|-----------------------|----------------------------------------------------------------|---------|----------|--------|-------------------------------|
-| `TARGET_USERNAME`     | Username for Git authentication.                               | string  | Yes      | Variable | `your_username` |
-| `TARGET_TOKEN`        | Token or password for Git authentication.                     | string  | Yes      | Secret | `your_personal_token`          |
-| `TARGET_URL`          | Base URL of the target Git repository (e.g., GitLab instance). | string  | Yes      | Variable | `https://gitlab.com`        |
-| `TARGET_GROUP`        | Group or organization name in the target repository.           | string  | Yes      | Variable | `my-group`                  |
-| `TARGET_REPO`         | Name of the repository in the target Git server.               | string  | Yes      | Variable | `my-repo`                   |
-| `TARGET_BRANCHES`     | Comma-separated list of branches to synchronize.               | string  | Yes      | Variable | `develop,homologacion,main` |
+License
 
+The Dockerfile and associated scripts and documentation in this project are released under the MIT License.
+
+Este formato es más legible, estructurado, y sigue las mejores prácticas para documentación técnica. 🚀
+
+--- 
 
 ## Usage
 
