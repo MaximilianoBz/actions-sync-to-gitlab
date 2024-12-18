@@ -24,14 +24,14 @@ jobs:
 
       # Sync to Gitlab Repository
       - name: Sync to Gitlab Repository
-        uses: MaximilianoBz/actions-sync-to-gitlab@v1.8
-        with:
-          username: '${{ vars.TARGET_USERNAME }}'
-          token: '${{ secrets.TARGET_TOKEN }}'
-          target-url: '${{ vars.TARGET_URL }}'
-          group: '${{ secrets.TARGET_GROUP }}'
-          branches: '${{ vars.TARGET_BRANCHES }}'
-          repo-name: '${{ env.repo_name }}'  # Use the extracted repository name
+        uses: MaximilianoBz/actions-sync-to-gitlab@v1.9
+        env:
+          TARGET_USERNAME: '${{ vars.TARGET_USERNAME }}'
+          TARGET_TOKEN: '${{ secrets.TARGET_TOKEN }}'
+          TARGET_URL: '${{ vars.TARGET_URL }}'
+          TARGET_GROUP: '${{ secrets.TARGET_GROUP }}'
+          TARGET_BRANCHES: '${{ vars.TARGET_BRANCHES }}'
+          TARGET_REPO: '${{ env.repo_name }}'  # Use the extracted repository name
 ```
 
 ##  Environment Variables

@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Step 1: Extract the repository name from the GITHUB_REPOSITORY environment variable
-TARGET_REPO="${repo_name}"
-
 # Build the full repository URL
 FULL_URL="${TARGET_URL}/${TARGET_GROUP}/${TARGET_REPO}.git"
 
