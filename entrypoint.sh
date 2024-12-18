@@ -16,6 +16,7 @@ echo "Configuring git with authentication..."
 git config --global http.postBuffer 524288000
 git config --global http.lowSpeedLimit 0
 git config --global http.lowSpeedTime 999999
+git config --global --add safe.directory /github/workspace
 
 # Add 'target' remote with authentication
 echo "Adding target remote..."
