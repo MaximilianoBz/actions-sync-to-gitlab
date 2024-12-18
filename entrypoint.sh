@@ -12,7 +12,7 @@ git config --global --add safe.directory /github/workspace
 
 # Add 'target' remote with authentication
 echo "Adding target remote..."
-AUTHENTICATED_URL="https://${TARGET_USERNAME}:${TARGET_TOKEN}@${FULL_URL}"
+AUTHENTICATED_URL="${TARGET_USERNAME}:${TARGET_TOKEN}@${FULL_URL}"
 git remote add target "${AUTHENTICATED_URL}"
 git fetch --all --prune
 
