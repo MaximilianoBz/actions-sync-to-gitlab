@@ -24,7 +24,7 @@ jobs:
 
       # Sync to Gitlab Repository
       - name: Sync to Gitlab Repository
-        uses: MaximilianoBz/actions-sync-to-gitlab@v2.0
+        uses: MaximilianoBz/actions-sync-to-gitlab@v2.1
         env:
           TARGET_USERNAME: '${{ vars.TARGET_USERNAME }}'
           TARGET_TOKEN: '${{ secrets.TARGET_TOKEN }}'
@@ -41,9 +41,9 @@ jobs:
 *	`TARGET_TOKEN` - [Required]. Token or password for Git authentication.
 	*	Type: string
 	*	Example: your_personal_token
-*	`TARGET_URL` - [Required]. Base URL of the target Git repository (e.g., GitLab instance).
+*	`TARGET_URL` - [Required]. Base URL of the target Git repository without the protocol (e.g., GitLab instance).
 	*	Type: string
-	*	Example: https://gitlab.com
+	*	Example: gitlab.com
 *	`TARGET_GROUP` - [Required]. Group or organization name in the target repository.
 	*	Type: string
 	*	Example: my-group
