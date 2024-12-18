@@ -14,9 +14,6 @@ inputs:
   group:
     description: 'Group or organization name in the target repository'
     required: true
-  repo-name:
-    description: 'Repository name in the target Git repository'
-    required: true
   branches:
     description: 'Comma-separated list of branches to synchronize'
     required: true

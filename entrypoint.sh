@@ -2,15 +2,15 @@
 set -e
 
 # Input variables
-TARGET_USERNAME="${INPUT_USERNAME}"
-TARGET_TOKEN="${INPUT_TOKEN}"
-TARGET_URL="${INPUT_TARGET_URL}"
-GROUP="${INPUT_GROUP}"
-REPO_NAME="${INPUT_REPO_NAME}"
-BRANCHES="${INPUT_BRANCHES}"
+TARGET_USERNAME="${TARGET_USERNAME}"
+TARGET_TOKEN="${TARGET_TOKEN}"
+TARGET_URL="${TARGET_URL}"
+TARGET_GROUP="${TARGET_GROUP}"
+TARGET_REPO="${repo_name}"
+TARGET_BRANCHES="${TARGET_BRANCHES}"
 
 # Build the full repository URL
-FULL_URL="${TARGET_URL}/${GROUP}/${REPO_NAME}.git"
+FULL_URL="${TARGET_URL}/${TARGET_GROUP}/${TARGET_REPO}.git"
 
 echo "Configuring git with authentication..."
 git config --global http.postBuffer 524288000
@@ -24,7 +24,7 @@ git remote add target "${AUTHENTICATED_URL}"
 git fetch --all --prune
 
 # Synchronize specified branches
-IFS=',' read -ra BRANCH_LIST <<< "$BRANCHES"
+IFS=',' read -ra BRANCH_LIST <<< "$TARGET_BRANCHES"
 
 for branch in "${BRANCH_LIST[@]}"; do
   branch="$(echo -e "${branch}" | tr -d '[:space:]')"  # Remove whitespaces
@@ -39,6 +39,7 @@ done
 
 # Synchronize tags
 echo "Synchronizing tags..."
+git fetch --tags
 git push -f --tags target
 
 echo "Synchronization completed successfully."
