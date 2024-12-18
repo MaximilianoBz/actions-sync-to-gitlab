@@ -20,8 +20,8 @@ jobs:
       - name: Sync to Target Repository
         uses: MaximilianoBz/actions-sync-to-gitlab@v1
         with:
-          username: ${{ vars.TARGET_USERNAME }}
-          token: ${{ secrets.TARGET_TOKEN }}
+          username: '${{ vars.TARGET_USERNAME }}'
+          token: '${{ secrets.TARGET_TOKEN }}'
           target-url: '${{ vars.TARGET_URL }}'
           group: '${{ secrets.TARGET_GROUP }}'
           repo-name: '${{ vars.TARGET_REPO }}'
