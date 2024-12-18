@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Input variables
-TARGET_USERNAME="${INPUT_USERNAME}"
-TARGET_TOKEN="${INPUT_TOKEN}"
-TARGET_URL="${INPUT_TARGET_URL}"
-TARGET_GROUP="${INPUT_GROUP}"
-TARGET_BRANCHES="${INPUT_BRANCHES}"
 # Step 1: Extract the repository name from the GITHUB_REPOSITORY environment variable
 TARGET_REPO="${repo_name}"
 
@@ -21,7 +15,7 @@ git config --global --add safe.directory /github/workspace
 
 # Add 'target' remote with authentication
 echo "Adding target remote..."
-AUTHENTICATED_URL="https://${TARGET_USERNAME}:${TARGET_TOKEN}@${FULL_URL#https://}"
+AUTHENTICATED_URL="https://${TARGET_USERNAME}:${TARGET_TOKEN}@${FULL_URL}"
 git remote add target "${AUTHENTICATED_URL}"
 git fetch --all --prune
 

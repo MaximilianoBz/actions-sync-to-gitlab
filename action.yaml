@@ -1,22 +1,6 @@
 name: 'Sync Specific Branches to Target Git Repository'
 description: 'Synchronizes specified branches and tags to a target Git repository.'
 author: 'Maximiliano Baez'
-inputs:
-  username:
-    description: 'Username for Git authentication'
-    required: true
-  token:
-    description: 'Token for Git authentication'
-    required: true
-  target-url:
-    description: 'Base URL of the target Git repository (e.g., https://gitlab.com)'
-    required: true
-  group:
-    description: 'Group or organization name in the target repository'
-    required: true
-  branches:
-    description: 'Comma-separated list of branches to synchronize'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
