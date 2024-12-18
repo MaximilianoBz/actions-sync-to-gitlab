@@ -24,7 +24,7 @@ jobs:
 
       # Sync to Gitlab Repository
       - name: Sync to Gitlab Repository
-        uses: MaximilianoBz/actions-sync-to-gitlab@v1.5
+        uses: MaximilianoBz/actions-sync-to-gitlab@v1.7
         with:
           username: '${{ vars.TARGET_USERNAME }}'
           token: '${{ secrets.TARGET_TOKEN }}'
